@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp" >
+
+
+
+        <ImageView
+            android:id="@+id/draw_item_img"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/ic_launcher"
+            android:contentDescription="@string/app_name" />
+        
+        <TextView
+	        android:id="@+id/draw_item_title"
+	        android:layout_width="0dip"
+	        android:layout_weight="1"
+	        android:layout_marginLeft="4dp"
+	        android:layout_marginTop="12dp"
+	        android:layout_marginBottom="12dp"
+	        android:layout_height="24dp"
+	        android:textSize="18sp"
+	        android:text="@string/app_name"
+	        android:textColor="#CCC" />
+        
+
+</LinearLayout>
