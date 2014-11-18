@@ -6,7 +6,12 @@
         <item>供应商</item>
         <item>仓储</item>
     </string-array>
+    <string-array name="types">
+        <item>现势数据</item>
+        <item>历史数据</item>
+    </string-array>
     <string name="drawer_open">打开导航菜单</string>
     <string name="drawer_close">关闭导航菜单</string>
     <string name="dummy_section_text">Section %1d is just a dummy section.</string>
+    <string name="base_map">http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineStreetGray/MapServer</string>
 </resources>

@@ -1,0 +1,1433 @@
+{
+  "displayFieldName" : "",
+  "fieldAliases" : {
+    "FID" : "FID",
+    "DIRECTION" : "DIRECTION",
+    "CLASSIFY" : "CLASSIFY",
+    "ID" : "ID",
+    "PRODUCT_ID" : "PRODUCT_ID",
+    "NAME" : "NAME",
+    "LEVEL" : "LEVEL",
+    "MASTER" : "MASTER",
+    "TELE" : "TELE",
+    "ADDRESS" : "ADDRESS",
+    "CLASSIFY_S" : "CLASSIFY_S",
+    "CLASSIFY_L" : "CLASSIFY_L"
+  },
+  "geometryType" : "esriGeometryPoint",
+  "spatialReference" : {
+    "wkid" : 4326,
+    "latestWkid" : 4326
+  },
+  "fields" : [
+    {
+      "name" : "FID",
+      "type" : "esriFieldTypeOID",
+      "alias" : "FID"
+    },
+    {
+      "name" : "DIRECTION",
+      "type" : "esriFieldTypeString",
+      "alias" : "DIRECTION",
+      "length" : 5
+    },
+    {
+      "name" : "CLASSIFY",
+      "type" : "esriFieldTypeSmallInteger",
+      "alias" : "CLASSIFY"
+    },
+    {
+      "name" : "ID",
+      "type" : "esriFieldTypeSmallInteger",
+      "alias" : "ID"
+    },
+    {
+      "name" : "PRODUCT_ID",
+      "type" : "esriFieldTypeString",
+      "alias" : "PRODUCT_ID",
+      "length" : 12
+    },
+    {
+      "name" : "NAME",
+      "type" : "esriFieldTypeString",
+      "alias" : "NAME",
+      "length" : 50
+    },
+    {
+      "name" : "LEVEL",
+      "type" : "esriFieldTypeSmallInteger",
+      "alias" : "LEVEL"
+    },
+    {
+      "name" : "MASTER",
+      "type" : "esriFieldTypeString",
+      "alias" : "MASTER",
+      "length" : 10
+    },
+    {
+      "name" : "TELE",
+      "type" : "esriFieldTypeInteger",
+      "alias" : "TELE"
+    },
+    {
+      "name" : "ADDRESS",
+      "type" : "esriFieldTypeString",
+      "alias" : "ADDRESS",
+      "length" : 20
+    },
+    {
+      "name" : "CLASSIFY_S",
+      "type" : "esriFieldTypeString",
+      "alias" : "CLASSIFY_S",
+      "length" : 100
+    },
+    {
+      "name" : "CLASSIFY_L",
+      "type" : "esriFieldTypeString",
+      "alias" : "CLASSIFY_L",
+      "length" : 50
+    }
+  ],
+  "features" : [
+    {
+      "attributes" : {
+        "FID" : 0,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 1,
+        "PRODUCT_ID" : "XHEB0001",
+        "NAME" : "兴业种子有限公司",
+        "LEVEL" : 2,
+        "MASTER" : "张军",
+        "TELE" : 85834888,
+        "ADDRESS" : "黑龙江省哈尔滨市先锋",
+        "CLASSIFY_S" : "德美亚1号、垦单10号;九三00-91、九三00-91;海垦九2号;甘啤3号;SR-411",
+        "CLASSIFY_L" : "玉米;大豆;小麦;大麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.26372309173973,
+        "y" : 45.983794885659222
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 1,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 3,
+        "PRODUCT_ID" : "XHEB0003",
+        "NAME" : "乾坤种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.32813515348528,
+        "y" : 45.648081630760259
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 2,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 4,
+        "PRODUCT_ID" : "XHEB0004",
+        "NAME" : "盛世种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.54424101475013,
+        "y" : 45.973718000588349
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 3,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 5,
+        "PRODUCT_ID" : "XHEB0005",
+        "NAME" : "长兴种业开发有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.78462629171167,
+        "y" : 46.391399899059934
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 4,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 6,
+        "PRODUCT_ID" : "XHEB0006",
+        "NAME" : "致泰种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.97301794780788,
+        "y" : 46.232169574291902
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 5,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 7,
+        "PRODUCT_ID" : "XHEB0007",
+        "NAME" : "东达种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 129.22384929025509,
+        "y" : 45.990009324255311
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 6,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 8,
+        "PRODUCT_ID" : "XHEB0008",
+        "NAME" : "隆盛育种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 128.02634167937435,
+        "y" : 45.241375255602009
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 7,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 9,
+        "PRODUCT_ID" : "XHEB0009",
+        "NAME" : "可嘉种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.47769494444287,
+        "y" : 46.067788223076775
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 8,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 10,
+        "PRODUCT_ID" : "XHEB0010",
+        "NAME" : "龙胜达种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.89778547347612,
+        "y" : 45.632709950196443
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 9,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 11,
+        "PRODUCT_ID" : "XHEB0011",
+        "NAME" : "青达育种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.85649537815425,
+        "y" : 45.265631110514335
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 10,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 12,
+        "PRODUCT_ID" : "XHEB0012",
+        "NAME" : "蒙声种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.59601030640079,
+        "y" : 46.48616373011572
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 11,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 13,
+        "PRODUCT_ID" : "XHEB0013",
+        "NAME" : "榆科种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 128.18748177597558,
+        "y" : 44.832598120268813
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 12,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 14,
+        "PRODUCT_ID" : "XHEB0014",
+        "NAME" : "青青种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 128.71176603503568,
+        "y" : 45.250733486908473
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 13,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 15,
+        "PRODUCT_ID" : "XHEB0015",
+        "NAME" : "名都种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 128.31260623636945,
+        "y" : 45.040384370084269
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 14,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 16,
+        "PRODUCT_ID" : "XHEB0016",
+        "NAME" : "金峰种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.35681539342022,
+        "y" : 45.16927962778351
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 15,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 17,
+        "PRODUCT_ID" : "XHEB0017",
+        "NAME" : "锦都种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 129.28590641587641,
+        "y" : 46.308966071163525
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 16,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 18,
+        "PRODUCT_ID" : "XHEB0018",
+        "NAME" : "可达种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 128.50808766847865,
+        "y" : 45.592589653181733
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 17,
+        "DIRECTION" : "HEB",
+        "CLASSIFY" : 0,
+        "ID" : 19,
+        "PRODUCT_ID" : "XHEB0019",
+        "NAME" : "米丰种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "王一",
+        "TELE" : 64321001,
+        "ADDRESS" : "黑龙江省哈尔滨市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.28813439027454,
+        "y" : 45.777207274190403
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 18,
+        "DIRECTION" : "MDJ",
+        "CLASSIFY" : 0,
+        "ID" : 20,
+        "PRODUCT_ID" : "XMDJ0001",
+        "NAME" : "秦那种业有限公司",
+        "LEVEL" : 1,
+        "MASTER" : "王晓辉",
+        "TELE" : 85834887,
+        "ADDRESS" : "黑龙江省牡丹江市东平",
+        "CLASSIFY_S" : "德美亚1号、德美亚2号;九三00-91、九三00-20、垦九10号;海垦九3号、北麦4号",
+        "CLASSIFY_L" : "玉米;大豆;小麦"
+      },
+      "geometry" : {
+        "x" : 128.98902622279229,
+        "y" : 44.318149760476729
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 19,
+        "DIRECTION" : "MDJ",
+        "CLASSIFY" : 0,
+        "ID" : 21,
+        "PRODUCT_ID" : "XMDJ0002",
+        "NAME" : "祝氏种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "李二",
+        "TELE" : 64321002,
+        "ADDRESS" : "黑龙江省牡丹江市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 130.01758994243835,
+        "y" : 44.836162761986543
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 20,
+        "DIRECTION" : "MDJ",
+        "CLASSIFY" : 0,
+        "ID" : 22,
+        "PRODUCT_ID" : "XMDJ0003",
+        "NAME" : "登玉种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "李二",
+        "TELE" : 64321002,
+        "ADDRESS" : "黑龙江省牡丹江市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 130.44067979413398,
+        "y" : 44.140505768906905
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 21,
+        "DIRECTION" : "MDJ",
+        "CLASSIFY" : 0,
+        "ID" : 23,
+        "PRODUCT_ID" : "XMDJ0004",
+        "NAME" : "良丰种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "李二",
+        "TELE" : 64321002,
+        "ADDRESS" : "黑龙江省牡丹江市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 130.18084587640442,
+        "y" : 45.333107864360386
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 22,
+        "DIRECTION" : "MDJ",
+        "CLASSIFY" : 0,
+        "ID" : 24,
+        "PRODUCT_ID" : "XMDJ0005",
+        "NAME" : "明玉示范繁殖农场",
+        "LEVEL" : 0,
+        "MASTER" : "李二",
+        "TELE" : 64321002,
+        "ADDRESS" : "黑龙江省牡丹江市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 130.16364161503941,
+        "y" : 44.976899324370265
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 23,
+        "DIRECTION" : "MDJ",
+        "CLASSIFY" : 0,
+        "ID" : 25,
+        "PRODUCT_ID" : "XMDJ0006",
+        "NAME" : "久顺种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "李二",
+        "TELE" : 64321002,
+        "ADDRESS" : "黑龙江省牡丹江市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 129.77344919135726,
+        "y" : 44.849383695345466
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 24,
+        "DIRECTION" : "MDJ",
+        "CLASSIFY" : 0,
+        "ID" : 26,
+        "PRODUCT_ID" : "XMDJ0007",
+        "NAME" : "天农种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "李二",
+        "TELE" : 64321002,
+        "ADDRESS" : "黑龙江省牡丹江市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 130.00217675006115,
+        "y" : 45.863542319927546
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 25,
+        "DIRECTION" : "MDJ",
+        "CLASSIFY" : 0,
+        "ID" : 27,
+        "PRODUCT_ID" : "XMDJ0008",
+        "NAME" : "怡丰种子开发有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "李二",
+        "TELE" : 64321002,
+        "ADDRESS" : "黑龙江省牡丹江市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 130.65144899172549,
+        "y" : 44.910089129105813
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 26,
+        "DIRECTION" : "JL",
+        "CLASSIFY" : 0,
+        "ID" : 28,
+        "PRODUCT_ID" : "XJL0001",
+        "NAME" : "辽海种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "孙五",
+        "TELE" : 64321005,
+        "ADDRESS" : "吉林省吉林市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.81961716180433,
+        "y" : 43.042930124019279
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 27,
+        "DIRECTION" : "JL",
+        "CLASSIFY" : 0,
+        "ID" : 29,
+        "PRODUCT_ID" : "XJL0002",
+        "NAME" : "明月种业有限责任公司",
+        "LEVEL" : 0,
+        "MASTER" : "孙五",
+        "TELE" : 64321005,
+        "ADDRESS" : "吉林省吉林市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.4853387220694,
+        "y" : 43.894537589568017
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 28,
+        "DIRECTION" : "JL",
+        "CLASSIFY" : 0,
+        "ID" : 30,
+        "PRODUCT_ID" : "XJL0003",
+        "NAME" : "古风科技开发有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "孙五",
+        "TELE" : 64321005,
+        "ADDRESS" : "吉林省吉林市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.30252046665532,
+        "y" : 43.560090762101254
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 29,
+        "DIRECTION" : "JL",
+        "CLASSIFY" : 0,
+        "ID" : 31,
+        "PRODUCT_ID" : "XJL0004",
+        "NAME" : "惠民种业有限责任公司",
+        "LEVEL" : 0,
+        "MASTER" : "孙五",
+        "TELE" : 64321005,
+        "ADDRESS" : "吉林省吉林市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.22439740719187,
+        "y" : 44.438168699036737
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 30,
+        "DIRECTION" : "JL",
+        "CLASSIFY" : 0,
+        "ID" : 32,
+        "PRODUCT_ID" : "XJL0005",
+        "NAME" : "丹铁种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "孙五",
+        "TELE" : 64321005,
+        "ADDRESS" : "吉林省吉林市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.28354998050327,
+        "y" : 44.333140659926926
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 31,
+        "DIRECTION" : "JL",
+        "CLASSIFY" : 0,
+        "ID" : 33,
+        "PRODUCT_ID" : "XJL0006",
+        "NAME" : "东润种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "孙五",
+        "TELE" : 64321005,
+        "ADDRESS" : "吉林省吉林市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.2785602559959,
+        "y" : 43.927500338297477
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 32,
+        "DIRECTION" : "JL",
+        "CLASSIFY" : 0,
+        "ID" : 34,
+        "PRODUCT_ID" : "XJL0007",
+        "NAME" : "明度农业高新技术有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "孙五",
+        "TELE" : 64321005,
+        "ADDRESS" : "吉林省吉林市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.14493561975723,
+        "y" : 43.096782370125595
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 33,
+        "DIRECTION" : "JL",
+        "CLASSIFY" : 0,
+        "ID" : 35,
+        "PRODUCT_ID" : "XJL0008",
+        "NAME" : "谷壳农业高新技术有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "孙五",
+        "TELE" : 64321005,
+        "ADDRESS" : "吉林省吉林市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 127.22034319367992,
+        "y" : 42.910887312816158
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 34,
+        "DIRECTION" : "JL",
+        "CLASSIFY" : 0,
+        "ID" : 36,
+        "PRODUCT_ID" : "XJL0009",
+        "NAME" : "富友度种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "孙五",
+        "TELE" : 64321005,
+        "ADDRESS" : "吉林省吉林市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.42077816700635,
+        "y" : 43.800231024934419
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 35,
+        "DIRECTION" : "CC",
+        "CLASSIFY" : 0,
+        "ID" : 37,
+        "PRODUCT_ID" : "XCC0001",
+        "NAME" : "宏大农业科技发展有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "钱四",
+        "TELE" : 64321004,
+        "ADDRESS" : "吉林省长春市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.23092218468855,
+        "y" : 43.979553646811155
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 36,
+        "DIRECTION" : "CC",
+        "CLASSIFY" : 0,
+        "ID" : 38,
+        "PRODUCT_ID" : "XCC0002",
+        "NAME" : "宇顺农业科技发展有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "钱四",
+        "TELE" : 64321004,
+        "ADDRESS" : "吉林省长春市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.59785655069629,
+        "y" : 44.968955332501423
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 37,
+        "DIRECTION" : "CC",
+        "CLASSIFY" : 0,
+        "ID" : 39,
+        "PRODUCT_ID" : "XCC0003",
+        "NAME" : "克明农业科技发展有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "钱四",
+        "TELE" : 64321004,
+        "ADDRESS" : "吉林省长春市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.81414500058509,
+        "y" : 44.638764802817377
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 38,
+        "DIRECTION" : "CC",
+        "CLASSIFY" : 0,
+        "ID" : 40,
+        "PRODUCT_ID" : "XCC0004",
+        "NAME" : "平乡农科种苗有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "钱四",
+        "TELE" : 64321004,
+        "ADDRESS" : "吉林省长春市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.9228496336749,
+        "y" : 44.236707662189815
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 39,
+        "DIRECTION" : "CC",
+        "CLASSIFY" : 0,
+        "ID" : 41,
+        "PRODUCT_ID" : "XCC0005",
+        "NAME" : "贵科种业有限责任公司",
+        "LEVEL" : 0,
+        "MASTER" : "钱四",
+        "TELE" : 64321004,
+        "ADDRESS" : "吉林省长春市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.30618337431611,
+        "y" : 44.423443983491723
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 40,
+        "DIRECTION" : "CC",
+        "CLASSIFY" : 0,
+        "ID" : 42,
+        "PRODUCT_ID" : "XCC0006",
+        "NAME" : "天顺种业有限责任公司",
+        "LEVEL" : 0,
+        "MASTER" : "钱四",
+        "TELE" : 64321004,
+        "ADDRESS" : "吉林省长春市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.60742029540006,
+        "y" : 43.453363213106456
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 41,
+        "DIRECTION" : "CC",
+        "CLASSIFY" : 0,
+        "ID" : 43,
+        "PRODUCT_ID" : "XCC0007",
+        "NAME" : "尼勇种业有限责任公司",
+        "LEVEL" : 0,
+        "MASTER" : "钱四",
+        "TELE" : 64321004,
+        "ADDRESS" : "吉林省长春市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.05996645330242,
+        "y" : 44.36817907203681
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 42,
+        "DIRECTION" : "SY",
+        "CLASSIFY" : 0,
+        "ID" : 44,
+        "PRODUCT_ID" : "XSY0001",
+        "NAME" : "捷顺种业有限责任公司",
+        "LEVEL" : 0,
+        "MASTER" : "周六",
+        "TELE" : 64321006,
+        "ADDRESS" : "辽宁省沈阳市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 123.31972974666428,
+        "y" : 41.641400414791065
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 43,
+        "DIRECTION" : "SY",
+        "CLASSIFY" : 0,
+        "ID" : 45,
+        "PRODUCT_ID" : "XSY0002",
+        "NAME" : "坤博种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "周六",
+        "TELE" : 64321006,
+        "ADDRESS" : "辽宁省沈阳市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 122.58840907835508,
+        "y" : 41.805353448850099
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 44,
+        "DIRECTION" : "SY",
+        "CLASSIFY" : 0,
+        "ID" : 46,
+        "PRODUCT_ID" : "XSY0003",
+        "NAME" : "置博种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "周六",
+        "TELE" : 64321006,
+        "ADDRESS" : "辽宁省沈阳市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 122.93559450895327,
+        "y" : 41.901871180111243
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 45,
+        "DIRECTION" : "SY",
+        "CLASSIFY" : 0,
+        "ID" : 47,
+        "PRODUCT_ID" : "XSY0004",
+        "NAME" : "龙丹种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "周六",
+        "TELE" : 64321006,
+        "ADDRESS" : "辽宁省沈阳市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 122.97190768789642,
+        "y" : 41.690328965626748
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 46,
+        "DIRECTION" : "SY",
+        "CLASSIFY" : 0,
+        "ID" : 48,
+        "PRODUCT_ID" : "XSY0005",
+        "NAME" : "宁都种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "周六",
+        "TELE" : 64321006,
+        "ADDRESS" : "辽宁省沈阳市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 122.74058399171065,
+        "y" : 41.447873709002238
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 47,
+        "DIRECTION" : "SY",
+        "CLASSIFY" : 0,
+        "ID" : 49,
+        "PRODUCT_ID" : "XSY0006",
+        "NAME" : "久发种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "周六",
+        "TELE" : 64321006,
+        "ADDRESS" : "辽宁省沈阳市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 122.65659557186882,
+        "y" : 42.106964055944388
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 48,
+        "DIRECTION" : "SY",
+        "CLASSIFY" : 0,
+        "ID" : 50,
+        "PRODUCT_ID" : "XSY0007",
+        "NAME" : "可读辽吉种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "周六",
+        "TELE" : 64321006,
+        "ADDRESS" : "辽宁省沈阳市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 123.42875975472839,
+        "y" : 42.025443190581484
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 49,
+        "DIRECTION" : "SY",
+        "CLASSIFY" : 0,
+        "ID" : 51,
+        "PRODUCT_ID" : "XSY0008",
+        "NAME" : "美丰种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "周六",
+        "TELE" : 64321006,
+        "ADDRESS" : "辽宁省沈阳市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 123.44219025547636,
+        "y" : 41.819505619180291
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 50,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 52,
+        "PRODUCT_ID" : "XQQHE0001",
+        "NAME" : "可美种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 123.54995045153782,
+        "y" : 46.369876596953134
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 51,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 53,
+        "PRODUCT_ID" : "XQQHE0002",
+        "NAME" : "久锋种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 124.25318404941993,
+        "y" : 48.039479507592432
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 52,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 54,
+        "PRODUCT_ID" : "XQQHE0003",
+        "NAME" : "前程种业科技有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.64906438853063,
+        "y" : 48.353645458436972
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 53,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 55,
+        "PRODUCT_ID" : "XQQHE0004",
+        "NAME" : "明溪大地种子经销处",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.40647541624071,
+        "y" : 48.597697541641594
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 54,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 56,
+        "PRODUCT_ID" : "XQQHE0005",
+        "NAME" : "顾顺大地种子经销处",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 124.18379043082507,
+        "y" : 46.85504571023074
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 55,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 57,
+        "PRODUCT_ID" : "XQQHE0006",
+        "NAME" : "惠利种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 123.84053567687488,
+        "y" : 47.853997823176599
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 56,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 58,
+        "PRODUCT_ID" : "XQQHE0007",
+        "NAME" : "九昌种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.26064003356839,
+        "y" : 47.319404340362553
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 57,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 59,
+        "PRODUCT_ID" : "XQQHE0008",
+        "NAME" : "明翔种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 126.04333171568499,
+        "y" : 48.035942520879303
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 58,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 60,
+        "PRODUCT_ID" : "XQQHE0009",
+        "NAME" : "谷顺种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 124.8694094629667,
+        "y" : 47.539661261425351
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 59,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 61,
+        "PRODUCT_ID" : "XQQHE0010",
+        "NAME" : "明利种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.33235352750921,
+        "y" : 48.007908042854979
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 60,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 62,
+        "PRODUCT_ID" : "XQQHE0011",
+        "NAME" : "永昌种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 123.26270646208741,
+        "y" : 47.257459734735789
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 61,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 63,
+        "PRODUCT_ID" : "XQQHE0012",
+        "NAME" : "朝阳种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.9725617402828,
+        "y" : 47.660067863243228
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 62,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 64,
+        "PRODUCT_ID" : "XQQHE0013",
+        "NAME" : "米露克种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 123.92084244558714,
+        "y" : 47.584514244134084
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 63,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 65,
+        "PRODUCT_ID" : "XQQHE0014",
+        "NAME" : "欣荣种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 123.10945622692191,
+        "y" : 47.017213357021831
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 64,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 66,
+        "PRODUCT_ID" : "XQQHE0015",
+        "NAME" : "电科种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 125.72278891565804,
+        "y" : 47.46669021102656
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 65,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 67,
+        "PRODUCT_ID" : "XQQHE0016",
+        "NAME" : "顾裕昌种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 124.38220441163094,
+        "y" : 47.264124734724476
+      }
+    },
+    {
+      "attributes" : {
+        "FID" : 66,
+        "DIRECTION" : "QQHE",
+        "CLASSIFY" : 0,
+        "ID" : 68,
+        "PRODUCT_ID" : "XQQHE0017",
+        "NAME" : "科多种业有限公司",
+        "LEVEL" : 0,
+        "MASTER" : "赵三",
+        "TELE" : 64321003,
+        "ADDRESS" : "黑龙江省齐齐哈尔市",
+        "CLASSIFY_S" : "九三00-20;海垦九1号;SR-411",
+        "CLASSIFY_L" : "大豆;小麦;甜菜"
+      },
+      "geometry" : {
+        "x" : 124.15445731431601,
+        "y" : 46.528275757651954
+      }
+    }
+  ]
+}

@@ -7,26 +7,15 @@
     <TextView
         android:id="@+id/fragment_item_title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/app_name" />
     
-    <android.support.v4.view.ViewPager
-	    xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:id="@+id/pagers"
-	    android:layout_width="match_parent"
-	    android:layout_height="match_parent">
-	    
-	    <android.support.v4.view.PagerTitleStrip
-	        android:id="@+id/pager_title_strip"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_gravity="top"
-	        android:background="#33b5e5"
-	        android:textColor="#fff"
-	        android:paddingTop="4dp"
-	        android:paddingBottom="4dp" />
-	
-	</android.support.v4.view.ViewPager>
-    
+    <com.esri.android.map.MapView
+		android:id="@+id/map"
+		android:layout_width="fill_parent"
+		android:layout_height="0dip"
+		android:layout_weight="1"
+		initExtent = "-104883832.73176 -61879538.081124 97369767.1032161 31889739.2417481">
+		</com.esri.android.map.MapView>
 
 </LinearLayout>

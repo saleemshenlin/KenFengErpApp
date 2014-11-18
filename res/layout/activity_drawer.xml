@@ -1,0 +1,30 @@
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!-- The main content view  XMin: -99404826.5442801
+YMin: -51704240.8758041
+XMax: 102848773.290696
+YMax: 42065036.447068-->
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.esri.android.map.MapView
+			android:id="@+id/map"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			initExtent = "7410346.627700049 330186.568353505 15689175.685358167 7077075.062130492 ">
+			</com.esri.android.map.MapView>
+    </FrameLayout>
+    <!-- The navigation drawer -->
+    <ListView android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:background="#111"/>
+</android.support.v4.widget.DrawerLayout>
