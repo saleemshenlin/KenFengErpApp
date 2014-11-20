@@ -17,37 +17,61 @@ public final class R {
         public static final int anim_popup_exit=0x7f040005;
     }
     public static final class array {
-        public static final int items=0x7f060000;
-        public static final int types=0x7f060001;
+        public static final int items=0x7f070000;
+        public static final int types=0x7f070001;
     }
     public static final class attr {
     }
+    public static final class color {
+        public static final int actionbar_text=0x7f050000;
+    }
     public static final class drawable {
         public static final int bg_welcome=0x7f020000;
-        public static final int ic_drawer=0x7f020001;
-        public static final int ic_launcher=0x7f020002;
+        public static final int border=0x7f020001;
+        public static final int ic_action_back=0x7f020002;
+        public static final int ic_action_cancel=0x7f020003;
+        public static final int ic_address=0x7f020004;
+        public static final int ic_dealer=0x7f020005;
+        public static final int ic_drawer=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int ic_master=0x7f020008;
+        public static final int ic_more=0x7f020009;
+        public static final int ic_storage=0x7f02000a;
+        public static final int ic_supplier=0x7f02000b;
+        public static final int ic_tele=0x7f02000c;
     }
     public static final class id {
-        public static final int content_frame=0x7f080001;
-        public static final int draw_item_img=0x7f080004;
-        public static final int draw_item_title=0x7f080005;
-        public static final int drawer_layout=0x7f080000;
-        public static final int fragment_item_title=0x7f080006;
-        public static final int left_drawer=0x7f080003;
-        public static final int map=0x7f080002;
+        public static final int content_frame=0x7f090004;
+        public static final int draw_item_img=0x7f090009;
+        public static final int draw_item_title=0x7f09000a;
+        public static final int drawer_layout=0x7f090003;
+        public static final int fragment_item_title=0x7f09000b;
+        public static final int imgCalloutMore=0x7f090008;
+        public static final int left_drawer=0x7f090006;
+        public static final int map=0x7f090005;
+        public static final int text_view_address=0x7f090002;
+        public static final int text_view_master=0x7f090000;
+        public static final int text_view_tele=0x7f090001;
+        public static final int txtCallout=0x7f090007;
     }
     public static final class layout {
-        public static final int activity_drawer=0x7f030000;
-        public static final int activity_splash=0x7f030001;
-        public static final int drawer_list_item=0x7f030002;
-        public static final int fragment_item=0x7f030003;
+        public static final int activity_detail=0x7f030000;
+        public static final int activity_drawer=0x7f030001;
+        public static final int activity_splash=0x7f030002;
+        public static final int callout=0x7f030003;
+        public static final int drawer_list_item=0x7f030004;
+        public static final int fragment_item=0x7f030005;
     }
     public static final class string {
-        public static final int app_name=0x7f050000;
-        public static final int base_map=0x7f050004;
-        public static final int drawer_close=0x7f050002;
-        public static final int drawer_open=0x7f050001;
-        public static final int dummy_section_text=0x7f050003;
+        public static final int app_name=0x7f060000;
+        public static final int base_map=0x7f060004;
+        public static final int drawer_close=0x7f060002;
+        public static final int drawer_open=0x7f060001;
+        public static final int dummy_section_text=0x7f060003;
+        public static final int txt_address=0x7f060005;
+        public static final int txt_master=0x7f060006;
+        public static final int txt_product=0x7f060008;
+        public static final int txt_tele=0x7f060007;
     }
     public static final class style {
         /** 
@@ -71,11 +95,17 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int splashTheme=0x7f070002;
+        public static final int AppTheme=0x7f080001;
+        public static final int CancelActionBar=0x7f080005;
+        public static final int HomeTheme=0x7f080003;
+        /**  general styles for the action bar 
+         */
+        public static final int MyActionBar=0x7f080004;
+        public static final int TitleTextStyle=0x7f080006;
+        public static final int splashTheme=0x7f080002;
     }
 }

@@ -5,7 +5,9 @@ import android.app.ActionBar.Tab;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -16,13 +18,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.esri.android.map.Callout;
+import com.esri.android.map.CalloutStyle;
+import com.esri.android.map.GraphicsLayer;
 import com.esri.android.map.MapView;
 import com.esri.android.map.ags.ArcGISTiledMapServiceLayer;
+import com.esri.android.map.event.OnSingleTapListener;
+import com.esri.core.geometry.Point;
+import com.esri.core.map.Graphic;
 
 
 public class DrawerActivity extends Activity {
@@ -35,6 +44,9 @@ public class DrawerActivity extends Activity {
     private CharSequence mTitle;
     private String[] mType;
     private ActionBar mActionBar;
+    private Query mQuery;
+    private long mErpLayerID = 0;
+    //private int mHistoryLayerID = 0;
     private static MapView mMapView;
     
 	@Override
@@ -43,6 +55,7 @@ public class DrawerActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_drawer);
 		
+		mQuery = new Query(getApplicationContext());
 		mTitle = mDrawerTitle = getTitle();
 		mActionBar = getActionBar();
 		mItemTitles = getResources().getStringArray(R.array.items);
@@ -76,11 +89,8 @@ public class DrawerActivity extends Activity {
 
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-        // Retrieve the map and initial extent from XML layout
-        mMapView = (MapView) findViewById(R.id.map);
-        // Add dynamic layer to MapView
-		mMapView.addLayer(new ArcGISTiledMapServiceLayer(getResources().getString(R.string.base_map)));
-		
+        //init Map
+        initMap();
         mActionBar.setDisplayHomeAsUpEnabled(true);
         mActionBar.setHomeButtonEnabled(true);
         mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -176,19 +186,9 @@ public class DrawerActivity extends Activity {
 
 	/** Swaps fragments in the main content view */
 	private void selectItem(int position) {
-	    // Create a new fragment and specify the planet to show based on position
-//	    Fragment fragment = new ItemFragment();
-//	    Bundle args = new Bundle();
-//	    args.putInt(ItemFragment.ARG_ITEM_NUMBER, position);
-//	    fragment.setArguments(args);
-//
-//	    // Insert the fragment by replacing any existing fragment
-//	    FragmentManager fragmentManager = getFragmentManager();
-//	    fragmentManager.beginTransaction()
-//	                   .replace(R.id.content_frame, fragment)
-//	                   .commit();
-
-	    // Highlight the selected item, update the title, and close the drawer
+		
+		new AddGraphicsLayer().execute(position);
+		// Highlight the selected item, update the title, and close the drawer
 	    mDrawerList.setItemChecked(position, true);
 	    setTitle(mItemTitles[position]);
 	    //Toast.makeText(getApplicationContext(), mItemTitles[position], Toast.LENGTH_SHORT).show();
@@ -199,6 +199,103 @@ public class DrawerActivity extends Activity {
 	public void setTitle(CharSequence title) {
 	    mTitle = title;
 	    getActionBar().setTitle(mTitle);
+	}
+	
+	/**
+	 * 用于Dp转像素
+	 * 
+	 * @param context
+	 *            上下文
+	 * @param dp
+	 *            DIP
+	 * @return int PX
+	 */
+	public static int Dp2Px(Context context, int dp) {
+		final float scale = context.getResources().getDisplayMetrics().density;
+		return (int) (dp * scale + 0.5f);
+	}
+	
+	public void initMap() {
+		// Retrieve the map and initial extent from XML layout
+        mMapView = (MapView) findViewById(R.id.map);
+        // Add dynamic layer to MapView
+		mMapView.addLayer(new ArcGISTiledMapServiceLayer(getResources().getString(R.string.base_map)));
+		// Add click
+		mMapView.setOnSingleTapListener(new OnSingleTapListener() {
+
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public void onSingleTap(float x, float y) {
+				// TODO Auto-generated method stub
+				if(mErpLayerID != 0){
+					if(mMapView.getLayerByID(mErpLayerID)!=null){
+						GraphicsLayer mGraphicsLayer = (GraphicsLayer) mMapView.getLayerByID(mErpLayerID);
+						int[] graphicIDs = mGraphicsLayer.getGraphicIDs(x, y, 25);
+						if (graphicIDs != null && graphicIDs.length > 0) {
+							Callout mCallout = mMapView.getCallout();
+							CalloutStyle mStyle = new CalloutStyle();
+							mStyle.setAnchor(5);
+							mStyle.setCornerCurve(10);
+							mStyle.setMaxHeight(Dp2Px(DrawerActivity.this, 48));
+							mStyle.setMaxWidth(Dp2Px(DrawerActivity.this, 300));
+							mStyle.setBackgroundColor(0xffFF8800);
+							mStyle.setFrameColor(0xffFF8800);
+							LayoutInflater mInflater = LayoutInflater
+									.from(DrawerActivity.this);
+							View mView = mInflater.inflate(R.layout.callout, null);
+							TextView mTextView = (TextView) mView.findViewById(R.id.txtCallout);
+							ImageView mImageView = (ImageView)mView.findViewById(R.id.imgCalloutMore);
+							Graphic mGraphic = mGraphicsLayer
+									.getGraphic(graphicIDs[0]);
+							String poiName = (String) mGraphic
+									.getAttributeValue("NAME");
+							final String poiType = (String) mGraphic
+									.getAttributeValue("TYPE");
+							final String poiId = (String) mGraphic
+									.getAttributeValue("ID");
+							if (poiName.length() > 10) {
+								String name = poiName.substring(0, 10);
+								mTextView.setText(name + "...");
+							} else {
+								String name = poiName;
+								mTextView.setText(name);
+							}
+							mImageView.setOnClickListener(new View.OnClickListener(){
+
+								@Override
+								public void onClick(View view) {
+									// TODO Auto-generated method stub
+									Intent mIntent = new Intent(DrawerActivity.this,
+											ErpDetailActivity.class);
+									mIntent.putExtra("TYPE", poiType);
+									mIntent.putExtra("ID", poiId);
+									DrawerActivity.this
+									.startActivity(mIntent);
+									DrawerActivity.this
+									.overridePendingTransition(
+											R.anim.anim_in_right2left,
+											R.anim.anim_out_right2left);
+								}
+								
+							});
+							mCallout.setStyle(mStyle);
+							mCallout.show((Point) mGraphic.getGeometry(), mView);
+						}
+						else{
+							if(mMapView.getCallout()!=null){
+								
+							}
+						}
+					}
+				}
+				
+			}
+			
+		});
 	}
     /**
      * Fragment Item Adapter
@@ -226,6 +323,37 @@ public class DrawerActivity extends Activity {
 			return mLinearLayout;
 		}
 		
-		
 	}
+    
+    public class AddGraphicsLayer extends AsyncTask<Integer, Integer, GraphicsLayer>{
+    	    	
+		@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+			if(mErpLayerID != 0){
+				if(mMapView.getLayerByID(mErpLayerID)!=null){
+					mMapView.removeLayer(mMapView.getLayerByID(mErpLayerID));
+				}
+			}
+		}
+
+		@Override
+		protected GraphicsLayer doInBackground(Integer... position) {
+			// TODO Auto-generated method stub
+			GraphicsLayer mGraphicsLayer = new GraphicsLayer();
+			mGraphicsLayer = mQuery.getPOIGraphicsViaType(position[0]);
+			mErpLayerID = mGraphicsLayer.getID();
+			return mGraphicsLayer;
+		}
+    	
+		@Override
+		protected void onPostExecute(GraphicsLayer result) {
+			super.onPostExecute(result);
+			mMapView.addLayer(result);
+			Toast.makeText(DrawerActivity.this, "成功加载地图数据", Toast.LENGTH_SHORT)
+					.show();
+		}
+    }
+    
 }

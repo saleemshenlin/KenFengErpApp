@@ -9,17 +9,17 @@ import android.net.Uri;
 import android.util.Log;
 
 
-public class SupplierProvidor extends ContentProvider {
+public class StorageProvidor extends ContentProvider {
 	private PoiDB mPoiDB;
 	
-	public SupplierProvidor(PoiDB db){
+	public StorageProvidor(PoiDB db){
 		this.mPoiDB = db;
 	}
 
 	/**
 	 * 定义一个"典据",与manifest中相匹配
 	 */
-	static final String AUTHORITY = "com.kenfeng.supplierprovider";
+	static final String AUTHORITY = "com.kenfeng.storageprovider";
 	/**
 	 * 定义一个Uri
 	 */
@@ -42,9 +42,9 @@ public class SupplierProvidor extends ContentProvider {
 				.getWritableDatabase();
 		try {
 			if (id < 0) {
-				return db.delete(PoiDB.TABLE, selection, selectionArgs);
+				return db.delete(PoiDB.TABLE_STORAGE, selection, selectionArgs);
 			} else {
-				return db.delete(PoiDB.TABLE, PoiDB.C_ID + "=" + id, null);
+				return db.delete(PoiDB.TABLE_STORAGE, PoiDB.C_ID + "=" + id, null);
 			}
 		} finally {
 			db.close();
@@ -62,7 +62,7 @@ public class SupplierProvidor extends ContentProvider {
 		SQLiteDatabase db = mPoiDB.getDbHelper()
 				.getWritableDatabase();
 		try {
-			long id = db.insertOrThrow(PoiDB.TABLE, null, values); //
+			long id = db.insertOrThrow(PoiDB.TABLE_STORAGE, null, values); //
 			if (id == -1) {
 				throw new RuntimeException(
 						String.format(
@@ -98,10 +98,10 @@ public class SupplierProvidor extends ContentProvider {
 				.getReadableDatabase(); //
 		try {
 			if (id < 0) {
-				return db.query(PoiDB.TABLE, projection, selection,
+				return db.query(PoiDB.TABLE_STORAGE, projection, selection,
 						selectionArgs, null, null, sortOrder); //
 			} else {
-				Cursor cursor = db.query(PoiDB.TABLE, projection, PoiDB.C_ID
+				Cursor cursor = db.query(PoiDB.TABLE_STORAGE, projection, PoiDB.C_FID
 						+ " = " + id, null, null, null, null);
 				return cursor; //
 			}
@@ -125,9 +125,9 @@ public class SupplierProvidor extends ContentProvider {
 				.getWritableDatabase();
 		try {
 			if (id < 0) {
-				return db.update(PoiDB.TABLE, values, selection, selectionArgs);
+				return db.update(PoiDB.TABLE_STORAGE, values, selection, selectionArgs);
 			} else {
-				return db.update(PoiDB.TABLE, values, PoiDB.C_ID + "=" + id,
+				return db.update(PoiDB.TABLE_STORAGE, values, PoiDB.C_ID + "=" + id,
 						null);
 			}
 		} finally {

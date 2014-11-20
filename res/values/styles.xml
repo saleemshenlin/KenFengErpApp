@@ -22,5 +22,29 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
-
+    
+    <style name="HomeTheme" parent="@android:style/Theme.Light">
+    	<item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionMenuTextColor">#ffffff</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_action_back</item>
+    </style>
+    
+    <!-- general styles for the action bar -->
+    <style name="MyActionBar"
+           parent="@android:style/Widget.ActionBar">
+		<item name="android:titleTextStyle">@style/TitleTextStyle</item>
+		<item name="android:homeAsUpIndicator">@drawable/ic_action_back</item>
+        <item name="android:background">#f00304</item>
+    </style>
+    
+    <style name="CancelActionBar"
+           parent="@android:style/Widget.ActionBar">
+		<item name="android:titleTextStyle">@style/TitleTextStyle</item>
+		<item name="android:homeAsUpIndicator">@drawable/ic_action_cancel</item>
+    </style>
+	
+    <style name="TitleTextStyle"
+           parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/actionbar_text</item>
+    </style>
 </resources>

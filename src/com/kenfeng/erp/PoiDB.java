@@ -21,8 +21,8 @@ public class PoiDB {
 	/**
 	 * 用于表示表名
 	 */
-	static final String TABLE = "suppelier_poi";
-	static final String TABLE_POIS = "pois";
+	static final String TABLE_ERP = "erp_poi";
+	static final String TABLE_STORAGE = "stroage_poi";
 	static final String TABLE_ROUTE = "routes";
 	/**
 	 * 字段名
@@ -40,6 +40,8 @@ public class PoiDB {
 	static final String C_CLASSIFY_S = "_classifys";
 	static final String C_CLASSIFY_L = "_classifyl";
 	static final String C_GEOMETRY = "_geometry";
+	static final String C_SUPPLIERID = "_supplierid";
+	static final String C_DEALERID = "_dealerid";
 
 	/**
 	 * 类DbHelper<br>
@@ -66,16 +68,21 @@ public class PoiDB {
 		public void onCreate(SQLiteDatabase db) {
 			// TODO Auto-generated method stub
 			Log.i("POIDB", "Creating database: " + DATABASE);
-			db.execSQL("create TABLE " + TABLE + "(" + C_FID
+			db.execSQL("create TABLE " + TABLE_ERP + "(" + C_FID
 					+ " INTEGER PRIMARY KEY," + C_CLASSIFY + " VARCHAR(128),"
+					+ C_ID + " VARCHAR(10),"
 					+ C_DIRECTION + " VARCHAR(128)," + C_PRODUCT_ID + " VARCHAR(10),"
-					+ C_ADDRESS + " VARCHAR(128)," + C_NAME + " VARCHAR(50),"
-					+ C_LEVEL + " VARCHAR(50)," + C_MASTER + " VARCHAR(128),"
-					+ C_TELE + " VARCHAR(128)," + C_CLASSIFY_L + " TEXT,"
+					+ C_ADDRESS + " VARCHAR(128)," + C_NAME + " VARCHAR(128),"
+					+ C_LEVEL + " VARCHAR(10)," + C_MASTER + " VARCHAR(128),"
+					+ C_TELE + " VARCHAR(50)," + C_CLASSIFY_L + " TEXT,"
 					+ C_CLASSIFY_S + " TEXT,"+ C_GEOMETRY + " TEXT)");
-//			db.execSQL("create TABLE " + TABLE_POIS + "(" + C_ID
-//					+ " INTEGER PRIMARY KEY," + C_NAME + " VARCHAR(128),"
-//					+ C_C_ID + " VARCHAR(10)," + C_SHAPE + " TEXT)");
+			db.execSQL("create TABLE " + TABLE_STORAGE + "(" + C_FID
+					+ " INTEGER PRIMARY KEY," + C_ID + " VARCHAR(10),"
+					+ C_SUPPLIERID + " VARCHAR(128)," + C_DEALERID + " VARCHAR(128),"
+					+ C_ADDRESS + " VARCHAR(128)," + C_NAME + " VARCHAR(128),"
+					+ C_LEVEL + " VARCHAR(10)," + C_MASTER + " VARCHAR(128),"
+					+ C_TELE + " VARCHAR(50)," + C_CLASSIFY_L + " TEXT,"
+					+ C_CLASSIFY_S + " TEXT,"+ C_GEOMETRY + " TEXT)");
 //			db.execSQL("create TABLE " + TABLE_ROUTE + "(" + C_ID
 //					+ " INTEGER PRIMARY KEY," + C_NAME + " VARCHAR(128),"
 //					+ C_ABSTRACT + " TEXT," + C_SHAPE + " TEXT)");
@@ -87,7 +94,7 @@ public class PoiDB {
 		@Override
 		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 			// TODO Auto-generated method stub
-			db.execSQL("drop table if exists " + TABLE);
+			db.execSQL("drop table if exists " + TABLE_ERP);
 			this.onCreate(db);
 		}
 	}
@@ -146,7 +153,7 @@ public class PoiDB {
 		Cursor mCursor = null;
 		try {
 			db = this.dbHelper.getReadableDatabase();
-			String strSQL = "select * from " + TABLE;
+			String strSQL = "select * from " + TABLE_ERP;
 			mCursor = db.rawQuery(strSQL, null);
 			int num = mCursor.getCount();
 			if (num < 1) {

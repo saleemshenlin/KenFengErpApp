@@ -129,7 +129,8 @@ public class SplashActivity extends Activity {
 		// TODO Auto-generated method stub
 		FileIO mFileIO = new FileIO(SplashActivity.this);
 		mFileIO.JsonToDB();
-		mFileIO.initSupplierData();
+		mFileIO.initPoiData();
+		mFileIO.initStorageData();
 	}
 	
 }

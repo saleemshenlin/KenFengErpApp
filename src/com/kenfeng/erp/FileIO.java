@@ -40,7 +40,10 @@ public class FileIO {
 
 				InputStream in = null;
 				OutputStream out = null;
-				if (filename.equals("erp_supplier_point.json")) {
+				if (filename.equals("erp.json")
+					||filename.equals("storage.json")
+					||filename.equals("supplier.json")
+					||filename.equals("dealer.json")) {
 						in = mAssetManager.open(filename);
 						File outFile = null;
 						outFile = new File(mContext.getExternalFilesDir("data"),
@@ -60,9 +63,11 @@ public class FileIO {
 			Log.e("FileIO", e.toString());
 		}
 	}
-	
-	public void initSupplierData() {
-		File poiJson = new File(mContext.getExternalFilesDir("data"), "erp_supplier_point.json");
+	/*
+	 * 经销商、供应商
+	 */
+	public void initPoiData() {
+		File poiJson = new File(mContext.getExternalFilesDir("data"), "erp.json");
 		JsonFactory mJsonFactory = new JsonFactory();
 		try {
 			System.out.println("Done!");
@@ -72,23 +77,23 @@ public class FileIO {
 			Graphic[] mGraphics = mFeatureSet.getGraphics();
 			for (Graphic mGraphic : mGraphics) {
 				ContentValues values = new ContentValues();
-				String mFID = (String) mGraphic.getAttributeValue("FID");
+				String mFID = (String) mGraphic.getAttributeValue("FID").toString();
 				values.put(PoiDB.C_FID, mFID);
 				String mDIRECTION = (String) mGraphic.getAttributeValue("DIRECTION");
 				values.put(PoiDB.C_DIRECTION, mDIRECTION);
-				String mCLASSIFY = (String) mGraphic.getAttributeValue("CLASSIFY");
+				String mCLASSIFY = (String) mGraphic.getAttributeValue("CLASSIFY").toString();
 				values.put(PoiDB.C_CLASSIFY, mCLASSIFY);
-				String mID = (String) mGraphic.getAttributeValue("ID");
+				String mID = (String) mGraphic.getAttributeValue("ID").toString();
 				values.put(PoiDB.C_ID, mID);
 				String mPRODUCTID = (String) mGraphic.getAttributeValue("PRODUCT_ID");
 				values.put(PoiDB.C_PRODUCT_ID, mPRODUCTID);
 				String mNAME = (String) mGraphic.getAttributeValue("NAME");
-				values.put(PoiDB.C_DIRECTION, mNAME);
-				String mLEVEL = (String) mGraphic.getAttributeValue("LEVEL");
+				values.put(PoiDB.C_NAME, mNAME);
+				String mLEVEL = (String) mGraphic.getAttributeValue("LEVEL").toString();
 				values.put(PoiDB.C_LEVEL, mLEVEL);
 				String mMASTER = (String) mGraphic.getAttributeValue("MASTER");
 				values.put(PoiDB.C_MASTER, mMASTER);
-				String mTELE = (String) mGraphic.getAttributeValue("TELE");
+				String mTELE = (String) mGraphic.getAttributeValue("TELE").toString();
 				values.put(PoiDB.C_TELE, mTELE);
 				String mADDRESS = (String) mGraphic.getAttributeValue("ADDRESS");
 				values.put(PoiDB.C_ADDRESS, mADDRESS);
@@ -99,7 +104,57 @@ public class FileIO {
 				Geometry mGeometry = mGraphic.getGeometry();
 				String mShape = GeometryToWKT(mGeometry);
 				values.put(PoiDB.C_GEOMETRY, mShape);
-				mPoiDB.insertOrIgnore(values,PoiDB.TABLE_POIS);
+				mPoiDB.insertOrIgnore(values,PoiDB.TABLE_ERP);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	/*
+	 * 仓储
+	 */
+	public void initStorageData() {
+		File poiJson = new File(mContext.getExternalFilesDir("data"), "storage.json");
+		JsonFactory mJsonFactory = new JsonFactory();
+		try {
+			System.out.println("Done!");
+			JsonParser mjJsonParser = mJsonFactory.createJsonParser(poiJson);
+			mjJsonParser.nextToken();
+			FeatureSet mFeatureSet = FeatureSet.fromJson(mjJsonParser);
+			Graphic[] mGraphics = mFeatureSet.getGraphics();
+			for (Graphic mGraphic : mGraphics) {
+				ContentValues values = new ContentValues();
+				String mFID = (String) mGraphic.getAttributeValue("FID").toString();
+				values.put(PoiDB.C_FID, mFID);
+				String mSUPPLIERID = (String) mGraphic.getAttributeValue("SUPPLIERID");
+				values.put(PoiDB.C_SUPPLIERID, mSUPPLIERID);
+				String mDEALERID = (String) mGraphic.getAttributeValue("DEALERID");
+				values.put(PoiDB.C_DEALERID, mDEALERID);
+				String mID = (String) mGraphic.getAttributeValue("ID").toString();
+				values.put(PoiDB.C_ID, mID);
+				String mNAME = (String) mGraphic.getAttributeValue("NAME");
+				values.put(PoiDB.C_NAME, mNAME);
+				String mLEVEL = (String) mGraphic.getAttributeValue("LEVEL").toString();
+				values.put(PoiDB.C_LEVEL, mLEVEL);
+				String mMASTER = (String) mGraphic.getAttributeValue("MASTER");
+				values.put(PoiDB.C_MASTER, mMASTER);
+				String mTELE = (String) mGraphic.getAttributeValue("TELE").toString();
+				values.put(PoiDB.C_TELE, mTELE);
+				String mADDRESS = (String) mGraphic.getAttributeValue("ADDRESS");
+				values.put(PoiDB.C_ADDRESS, mADDRESS);
+				String mCLASSIFY_S = (String) mGraphic.getAttributeValue("CLASSIFY_S");
+				values.put(PoiDB.C_CLASSIFY_S, mCLASSIFY_S);
+				String mCLASSIFY_L = (String) mGraphic.getAttributeValue("CLASSIFY_L");
+				values.put(PoiDB.C_CLASSIFY_L, mCLASSIFY_L);
+				Geometry mGeometry = mGraphic.getGeometry();
+				String mShape = GeometryToWKT(mGeometry);
+				values.put(PoiDB.C_GEOMETRY, mShape);
+				mPoiDB.insertOrIgnore(values,PoiDB.TABLE_STORAGE);
 			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

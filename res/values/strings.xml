@@ -14,4 +14,8 @@
     <string name="drawer_close">关闭导航菜单</string>
     <string name="dummy_section_text">Section %1d is just a dummy section.</string>
     <string name="base_map">http://cache1.arcgisonline.cn/ArcGIS/rest/services/ChinaOnlineStreetGray/MapServer</string>
+	<string name="txt_address">联系地址</string>
+	<string name="txt_master">联系人</string>
+	<string name="txt_tele">联系方式</string>
+	<string name="txt_product">商品列表</string>
 </resources>
