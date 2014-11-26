@@ -29,6 +29,7 @@ import com.esri.android.map.CalloutStyle;
 import com.esri.android.map.GraphicsLayer;
 import com.esri.android.map.MapView;
 import com.esri.android.map.ags.ArcGISTiledMapServiceLayer;
+import com.esri.android.map.event.OnLongPressListener;
 import com.esri.android.map.event.OnSingleTapListener;
 import com.esri.core.geometry.Point;
 import com.esri.core.map.Graphic;
@@ -46,6 +47,7 @@ public class DrawerActivity extends Activity {
     private ActionBar mActionBar;
     private Query mQuery;
     private long mErpLayerID = 0;
+    private long mAroundLayerId = 0;
     //private int mHistoryLayerID = 0;
     private static MapView mMapView;
     
@@ -220,7 +222,7 @@ public class DrawerActivity extends Activity {
         mMapView = (MapView) findViewById(R.id.map);
         // Add dynamic layer to MapView
 		mMapView.addLayer(new ArcGISTiledMapServiceLayer(getResources().getString(R.string.base_map)));
-		// Add click
+		// Add single tab
 		mMapView.setOnSingleTapListener(new OnSingleTapListener() {
 
 			/**
@@ -230,13 +232,23 @@ public class DrawerActivity extends Activity {
 
 			@Override
 			public void onSingleTap(float x, float y) {
-				// TODO Auto-generated method stub
+				int[] graphicIDs = null;
+				GraphicsLayer mGraphicsLayer =null;
 				if(mErpLayerID != 0){
 					if(mMapView.getLayerByID(mErpLayerID)!=null){
-						GraphicsLayer mGraphicsLayer = (GraphicsLayer) mMapView.getLayerByID(mErpLayerID);
-						int[] graphicIDs = mGraphicsLayer.getGraphicIDs(x, y, 25);
+						if(mMapView.getLayerByID(mAroundLayerId)!=null){
+							mGraphicsLayer = (GraphicsLayer) mMapView.getLayerByID(mAroundLayerId);
+							graphicIDs = mGraphicsLayer.getGraphicIDs(x, y, 25);
+							if (graphicIDs != null && graphicIDs.length == 0){
+								mGraphicsLayer = (GraphicsLayer) mMapView.getLayerByID(mErpLayerID);
+								graphicIDs = mGraphicsLayer.getGraphicIDs(x, y, 25);
+							}
+						}else{
+							mGraphicsLayer = (GraphicsLayer) mMapView.getLayerByID(mErpLayerID);
+							graphicIDs = mGraphicsLayer.getGraphicIDs(x, y, 25);
+						}
 						if (graphicIDs != null && graphicIDs.length > 0) {
-							Callout mCallout = mMapView.getCallout();
+							final Callout mCallout = mMapView.getCallout();
 							CalloutStyle mStyle = new CalloutStyle();
 							mStyle.setAnchor(5);
 							mStyle.setCornerCurve(10);
@@ -279,22 +291,49 @@ public class DrawerActivity extends Activity {
 									.overridePendingTransition(
 											R.anim.anim_in_right2left,
 											R.anim.anim_out_right2left);
+									mCallout.hide();
 								}
 								
 							});
 							mCallout.setStyle(mStyle);
 							mCallout.show((Point) mGraphic.getGeometry(), mView);
 						}
-						else{
-							if(mMapView.getCallout()!=null){
-								
-							}
-						}
 					}
 				}
 				
 			}
 			
+			
+		});
+		// Add long tab
+		mMapView.setOnLongPressListener(new OnLongPressListener() {
+			
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+			public boolean onLongPress(float x, float y) {
+				// TODO Auto-generated method stub
+				if(mErpLayerID != 0){
+					if(mMapView.getLayerByID(mErpLayerID)!=null){
+						GraphicsLayer mGraphicsLayer = (GraphicsLayer) mMapView.getLayerByID(mErpLayerID);
+						int[] graphicIDs = mGraphicsLayer.getGraphicIDs(x, y, 25);
+						if (graphicIDs != null && graphicIDs.length > 0) {
+							Graphic mGraphic = mGraphicsLayer.getGraphic(graphicIDs[0]);
+							new AddAroundGraphicLayer().execute(mGraphic);
+						}
+						return true;
+					}
+					else{
+						return false;
+					}
+				}
+				else{
+					return false;	
+				}
+			}
 		});
 	}
     /**
@@ -336,6 +375,11 @@ public class DrawerActivity extends Activity {
 					mMapView.removeLayer(mMapView.getLayerByID(mErpLayerID));
 				}
 			}
+			if(mErpLayerID != 0){
+				if(mMapView.getLayerByID(mAroundLayerId)!=null){
+					mMapView.removeLayer(mMapView.getLayerByID(mAroundLayerId));
+				}
+			}
 		}
 
 		@Override
@@ -356,4 +400,33 @@ public class DrawerActivity extends Activity {
 		}
     }
     
+    public class AddAroundGraphicLayer extends AsyncTask<Graphic, Graphic, GraphicsLayer>{
+    	@Override
+		protected void onPreExecute() {
+			// TODO Auto-generated method stub
+			super.onPreExecute();
+			if(mAroundLayerId != 0){
+				if(mMapView.getLayerByID(mAroundLayerId)!=null){
+					mMapView.removeLayer(mMapView.getLayerByID(mAroundLayerId));
+				}
+			}
+		}
+
+		@Override
+		protected GraphicsLayer doInBackground(Graphic... poi) {
+			// TODO Auto-generated method stub
+			GraphicsLayer mGraphicsLayer = new GraphicsLayer();
+			mGraphicsLayer = mQuery.getPOIsAround(poi[0]);
+			mAroundLayerId = mGraphicsLayer.getID();
+			return mGraphicsLayer;
+		}
+    	
+		@Override
+		protected void onPostExecute(GraphicsLayer result) {
+			super.onPostExecute(result);
+			mMapView.addLayer(result);
+			Toast.makeText(DrawerActivity.this, "成功加载地图数据", Toast.LENGTH_SHORT)
+					.show();
+		}
+    }
 }

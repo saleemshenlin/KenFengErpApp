@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:baselineAligned="false"
     android:background="#ffffff"
+    android:baselineAligned="false"
     android:orientation="horizontal" >
 
     <LinearLayout
@@ -11,126 +11,227 @@
         android:layout_height="match_parent"
         android:layout_weight="0.350"
         android:orientation="vertical" >
-         <LinearLayout
-	            android:layout_width="fill_parent"
-	            android:layout_height="48dp" >
 
-	            <ImageView
-	                android:layout_width="32dp"
-	                android:layout_height="32dp"
-	                android:layout_margin="8dp"
-	                android:src="@drawable/ic_master"
-	                android:contentDescription="@string/app_name" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" >
 
-	            <LinearLayout
-	                android:layout_width="0dip"
-	                android:layout_height="48dp"
-	                android:orientation="vertical"
-	                android:layout_weight="1"
-	                android:layout_marginBottom="4dp"
-	            	android:background="@drawable/border" >
-	                
-			        <TextView
-			            android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="4dp"
-						android:layout_marginBottom="4dp"
-			            android:text="@string/txt_master"
-			            android:textColor="#ccc"
-			            android:textSize="12sp" />
-			        
-			       <TextView
-			            android:id="@+id/text_view_master"
-			            android:layout_width="match_parent"
-			            android:layout_height="0dip"
-			            android:layout_weight="1"
-			            android:layout_marginBottom="4dp"
-			            android:text="@string/app_name"
-			            android:textColor="#333"
-			            android:textSize="12sp" />
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_master" />
 
-	            </LinearLayout>
-	      </LinearLayout>
-	      <LinearLayout
-	            android:layout_width="fill_parent"
-	            android:layout_height="48dp" >
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="48dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_bottom"
+                android:orientation="vertical" >
 
-	            <ImageView
-	                android:layout_width="32dp"
-	                android:layout_height="32dp"
-	                android:layout_margin="8dp"
-	                android:src="@drawable/ic_tele"
-	                android:contentDescription="@string/app_name" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txt_master"
+                    android:textColor="#ccc"
+                    android:textSize="12sp" />
 
-	            <LinearLayout
-	                android:layout_width="0dip"
-	                android:layout_height="48dp"
-	                android:orientation="vertical"
-	                android:layout_weight="1"
-	                android:layout_marginBottom="4dp"
-	            	android:background="@drawable/border" >
-	                
-			        <TextView
-			            android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="4dp"
-						android:layout_marginBottom="4dp"
-			            android:text="@string/txt_tele"
-			            android:textColor="#ccc"
-			            android:textSize="12sp" />
-			        
-			       <TextView
-			            android:id="@+id/text_view_tele"
-			            android:layout_width="match_parent"
-			            android:layout_height="0dip"
-			            android:layout_marginBottom="4dp"
-			            android:text="@string/app_name"
-			            android:layout_weight="1"
-			            android:textColor="#333"
-			            android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/text_view_master"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/app_name"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
 
-	            </LinearLayout>
-	      </LinearLayout>
-	      <LinearLayout
-	            android:layout_width="fill_parent"
-	            android:layout_height="48dp" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" >
 
-	            <ImageView
-	                android:layout_width="32dp"
-	                android:layout_height="32dp"
-	                android:layout_margin="8dp"
-	                android:src="@drawable/ic_address"
-	                android:contentDescription="@string/app_name" />
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_tele" />
 
-	            <LinearLayout
-	                android:layout_width="0dip"
-	                android:layout_height="48dp"
-	                android:orientation="vertical"
-	                android:layout_weight="1"
-	                android:layout_marginBottom="4dp"
-	            	android:background="@drawable/border" >
-	                
-			        <TextView
-			            android:layout_width="match_parent"
-						android:layout_height="wrap_content"
-						android:layout_marginTop="4dp"
-						android:layout_marginBottom="4dp"
-			            android:text="@string/txt_address"
-			            android:textColor="#ccc"
-			            android:textSize="12sp" />
-			        
-			       <TextView
-			            android:id="@+id/text_view_address"
-			            android:layout_width="match_parent"
-			            android:layout_height="0dip"
-			            android:layout_marginBottom="4dp"
-			            android:layout_weight="1"
-			            android:text="@string/app_name"
-			            android:textColor="#333"
-			            android:textSize="12sp" />
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="48dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_bottom"
+                android:orientation="vertical" >
 
-	            </LinearLayout>
-	      </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txt_tele"
+                    android:textColor="#ccc"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/text_view_tele"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/app_name"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" >
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_address" />
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="48dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_bottom"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txt_address"
+                    android:textColor="#ccc"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/text_view_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/app_name"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+				<LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_star" />
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_bottom"
+                android:orientation="vertical" >
+
+                <RatingBar
+                    android:id="@+id/rate_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+                
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" >
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_tag" />
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="48dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_bottom"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txt_tag"
+                    android:textColor="#ccc"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/text_view_tag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/app_name"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_info" />
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_bottom"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/txt_info"
+                    android:textColor="#ccc"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/text_view_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/app_name"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
     </LinearLayout>
 
     <LinearLayout
@@ -138,6 +239,108 @@
         android:layout_height="match_parent"
         android:layout_weight="0.650"
         android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="48dp" >
+
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="8dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_chart" />
+
+            <LinearLayout
+                android:layout_width="0dip"
+                android:layout_height="48dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/border_bottom"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/text_view_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/txt_chart"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="8dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/border_top"
+            android:baselineAligned="false" >
+
+			<LinearLayout
+			    android:layout_width="0dip"
+			    android:layout_height="48dp"
+			    android:layout_weight="1"
+			    android:orientation="vertical" >
+
+				<TextView
+				    android:id="@+id/text_view_month"
+				    android:drawableLeft="@drawable/ic_month"
+				    android:layout_width="wrap_content"
+				    android:layout_height="48dp"
+				    android:layout_gravity="center_horizontal"
+					android:gravity="center_vertical"
+				    android:text="@string/txt_month"
+				    android:textColor="#ccc" />
+
+			</LinearLayout>
+			
+			<LinearLayout
+			    android:layout_width="0dip"
+			    android:layout_height="48dp"
+			    android:layout_weight="1"
+			    android:orientation="vertical">
+
+		             <TextView
+		                 android:id="@+id/text_view_season"
+		                 android:drawableLeft="@drawable/ic_season"
+		                 android:layout_width="wrap_content"
+		                 android:layout_height="48dp"
+		                 android:layout_gravity="center_horizontal"
+		                 android:gravity="center_vertical"
+		                 android:text="@string/txt_season"
+		                 android:textColor="#ccc" />
+
+			</LinearLayout>
+			
+			<LinearLayout
+			    android:layout_width="0dip"
+			    android:layout_height="48dp"
+			    android:layout_weight="1" 
+			    android:orientation="vertical">
+
+		             <TextView
+		                 android:id="@+id/text_view_year"
+		                 android:layout_width="wrap_content"
+		                 android:layout_height="48dp"
+		                 android:layout_gravity="center_horizontal"
+		                 android:drawableLeft="@drawable/ic_year"
+		                 android:gravity="center_vertical"
+		                 android:text="@string/txt_year"
+		                 android:textColor="#ccc" />
+
+			</LinearLayout>
+           
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

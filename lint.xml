@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
     <issue id="HandlerLeak" severity="ignore" />
+    <issue id="NestedWeights">
+        <ignore path="res/layout/activity_detail.xml" />
+    </issue>
+    <issue id="ResourceAsColor" severity="ignore" />
 </lint>

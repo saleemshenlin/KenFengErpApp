@@ -33,6 +33,7 @@ public class Query {
 		this.mStorageProvidor = new StorageProvidor(this.mPoiDB);
 	}
 	
+	
 	public GraphicsLayer getPOIGraphicsViaType(int type) {
 		GraphicsLayer mGraphicsLayer = new GraphicsLayer();
 		Cursor mCursor = null;
@@ -40,11 +41,11 @@ public class Query {
 		try {
 			switch (type) {
 			case 0:
-				mTypeString = "dealer";
+				mTypeString = "supplier";
 				mCursor = mErpProvidor.query(ErpProvidor.CONTENT_URI, null, PoiDB.C_CLASSIFY + " = '"+type+"'", null, null);
 				break;
 			case 1:
-				mTypeString = "supplier";
+				mTypeString = "dealer";
 				mCursor = mErpProvidor.query(ErpProvidor.CONTENT_URI, null, PoiDB.C_CLASSIFY + " = '"+type+"'", null, null);
 				break;
 			case 2:
@@ -61,7 +62,7 @@ public class Query {
 				String WKT = mCursor.getString(mCursor
 						.getColumnIndex(PoiDB.C_GEOMETRY));
 				String ID = mCursor.getString(mCursor
-						.getColumnIndex(PoiDB.C_FID));
+						.getColumnIndex(PoiDB.C_ID));
 				String NAME = mCursor.getString(mCursor
 						.getColumnIndex(PoiDB.C_NAME));
 				String TYPE = type+"";
@@ -89,18 +90,152 @@ public class Query {
 		return mGraphicsLayer;
 	}
 	
+	public GraphicsLayer getPOIsAround(Graphic poi){
+		GraphicsLayer mGraphicsLayer = new GraphicsLayer();
+		Cursor mCursor = null;
+		Map<String, Object> mMap = new HashMap<String, Object>();
+		int mType = Integer.parseInt((String)poi.getAttributeValue("TYPE"));
+		try {
+			switch (mType) {
+			case 0:
+				mCursor = mStorageProvidor.query(StorageProvidor.CONTENT_URI, null, null, null, null);
+				mCursor.moveToFirst();
+				while (mCursor.moveToNext()) {
+					String WKT = mCursor.getString(mCursor
+							.getColumnIndex(PoiDB.C_GEOMETRY));
+					String ID = mCursor.getString(mCursor
+							.getColumnIndex(PoiDB.C_ID));
+					String NAME = mCursor.getString(mCursor
+							.getColumnIndex(PoiDB.C_NAME));
+					String[] mSuppliers = mCursor.getString(mCursor.getColumnIndex(PoiDB.C_SUPPLIERID)).split(";");
+					for (int i = 0; i < mSuppliers.length; i++) {
+						if (Integer.parseInt(mSuppliers[i]) == Integer.parseInt((String)poi.getAttributeValue("ID"))) {
+							String TYPE = "2";
+							mMap.put("NAME", NAME);
+							mMap.put("ID", ID);
+							mMap.put("TYPE", TYPE);
+							Drawable mDrawable = mContext.getResources().getDrawable(R.drawable.ic_storage);
+							PictureMarkerSymbol mPictureMarkerSymbol = new PictureMarkerSymbol(
+									mDrawable);
+							Point mPoint = (Point) Query.wkt2Geometry(WKT);
+							Log.d("Query", mPoint.getX() + ";" + mPoint.getY());
+							Graphic mGraphic = new Graphic(mPoint, mPictureMarkerSymbol,
+									mMap, 0);
+							mGraphicsLayer.addGraphic(mGraphic);
+						}
+					}
+				}
+				break;
+			case 1:
+				mCursor = mStorageProvidor.query(StorageProvidor.CONTENT_URI, null, null, null, null);
+				mCursor.moveToFirst();
+				while (mCursor.moveToNext()) {
+					String WKT = mCursor.getString(mCursor
+							.getColumnIndex(PoiDB.C_GEOMETRY));
+					String ID = mCursor.getString(mCursor
+							.getColumnIndex(PoiDB.C_ID));
+					String NAME = mCursor.getString(mCursor
+							.getColumnIndex(PoiDB.C_NAME));
+					String[] mDealers = mCursor.getString(mCursor.getColumnIndex(PoiDB.C_DEALERID)).split(";");
+					for (int i = 0; i < mDealers.length; i++) {
+						if (Integer.parseInt(mDealers[i]) == Integer.parseInt((String)poi.getAttributeValue("ID"))) {
+							String TYPE = "2";
+							mMap.put("NAME", NAME);
+							mMap.put("ID", ID);
+							mMap.put("TYPE", TYPE);
+							Drawable mDrawable = mContext.getResources().getDrawable(R.drawable.ic_storage);
+							PictureMarkerSymbol mPictureMarkerSymbol = new PictureMarkerSymbol(
+									mDrawable);
+							Point mPoint = (Point) Query.wkt2Geometry(WKT);
+							Log.d("Query", mPoint.getX() + ";" + mPoint.getY());
+							Graphic mGraphic = new Graphic(mPoint, mPictureMarkerSymbol,
+									mMap, 0);
+							mGraphicsLayer.addGraphic(mGraphic);
+						}
+					}
+				}
+				break;
+			case 2:
+				mCursor = getPOIViaId((String)poi.getAttributeValue("ID"),"2");
+				if (mCursor.moveToFirst()) {
+					String[] mSuppliers	= mCursor.getString(mCursor.getColumnIndex(PoiDB.C_SUPPLIERID)).split(";");
+					String[] mDealers = mCursor.getString(mCursor.getColumnIndex(PoiDB.C_DEALERID)).split(";");
+					for (int i = 0; i < mSuppliers.length; i++) {
+						Cursor mSupplierCursor = getPOIViaId(mSuppliers[i], "0");
+						if (mSupplierCursor.moveToFirst()) {
+							String WKT = mSupplierCursor.getString(mSupplierCursor
+									.getColumnIndex(PoiDB.C_GEOMETRY));
+							String ID = mSupplierCursor.getString(mSupplierCursor
+									.getColumnIndex(PoiDB.C_ID));
+							String NAME = mSupplierCursor.getString(mSupplierCursor
+									.getColumnIndex(PoiDB.C_NAME));
+							String TYPE = "0";
+							mMap.put("NAME", NAME);
+							mMap.put("ID", ID);
+							mMap.put("TYPE", TYPE);
+							Drawable mDrawable = mContext.getResources().getDrawable(R.drawable.ic_supplier);
+							PictureMarkerSymbol mPictureMarkerSymbol = new PictureMarkerSymbol(
+									mDrawable);
+							Point mPoint = (Point) Query.wkt2Geometry(WKT);
+							Log.d("Query", mPoint.getX() + ";" + mPoint.getY());
+							Graphic mGraphic = new Graphic(mPoint, mPictureMarkerSymbol,
+									mMap, 0);
+							mGraphicsLayer.addGraphic(mGraphic);
+							mSupplierCursor.isClosed();
+						}
+					}
+					for (int i = 0; i < mDealers.length; i++) {
+						Cursor mDealerCursor = getPOIViaId(mDealers[i], "1");
+						if (mDealerCursor.moveToFirst()) {
+							String WKT = mDealerCursor.getString(mDealerCursor
+									.getColumnIndex(PoiDB.C_GEOMETRY));
+							String ID = mDealerCursor.getString(mDealerCursor
+									.getColumnIndex(PoiDB.C_ID));
+							String NAME = mDealerCursor.getString(mDealerCursor
+									.getColumnIndex(PoiDB.C_NAME));
+							String TYPE = "1";
+							mMap.put("NAME", NAME);
+							mMap.put("ID", ID);
+							mMap.put("TYPE", TYPE);
+							Drawable mDrawable = mContext.getResources().getDrawable(R.drawable.ic_dealer);
+							PictureMarkerSymbol mPictureMarkerSymbol = new PictureMarkerSymbol(
+									mDrawable);
+							Point mPoint = (Point) Query.wkt2Geometry(WKT);
+							Log.d("Query", mPoint.getX() + ";" + mPoint.getY());
+							Graphic mGraphic = new Graphic(mPoint, mPictureMarkerSymbol,
+									mMap, 0);
+							mGraphicsLayer.addGraphic(mGraphic);
+							mDealerCursor.isClosed();
+						}
+					}
+				}						
+				break;
+			default:
+				break;
+			}
+			
+		} catch (Exception e) {
+			Log.e("getPOIsAround", e.getMessage().toString());
+		}finally{
+			if (!mCursor.isClosed()) {
+				mCursor.close();
+			}
+		}
+		return mGraphicsLayer;
+	}
+	
 	public Cursor getPOIViaId(String id ,String type){
 		Cursor mCursor = null;
 		try {
 			if(Integer.parseInt(type) == 2){
 				final Uri queryUri = Uri.parse(StorageProvidor.CONTENT_URI.toString() + "/"
 						 + id);
-				mCursor = mErpProvidor.query(queryUri, null, null, null, null);
+				mCursor = mStorageProvidor.query(queryUri, null, null, null, null);
 			}
 			else{
 				final Uri queryUri = Uri.parse(ErpProvidor.CONTENT_URI.toString() + "/"
 						 + id);
-				mCursor =  mStorageProvidor.query(queryUri, null, null, null, null);
+				mCursor =  mErpProvidor.query(queryUri, null, null, null, null);
 			}
 		} catch (Exception e) {
 			Log.e(TAG_STRING, "getPOIViaId:"+e.toString());

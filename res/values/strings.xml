@@ -2,13 +2,37 @@
 
     <string name="app_name">垦丰种业资源管理</string>
 	<string-array name="items">
-        <item>经销商</item>
         <item>供应商</item>
+        <item>经销商</item>
         <item>仓储</item>
+    </string-array>
+    <string-array name="chart_titles">
+        <item>供应量(千克)</item>
+        <item>销售量(千克)</item>
+        <item>仓量(千克)</item>
+    </string-array>
+    <string-array name="chart_times">
+        <item>当月</item>
+        <item>当季</item>
+        <item>当年</item>
     </string-array>
     <string-array name="types">
         <item>现势数据</item>
         <item>历史数据</item>
+    </string-array>
+    <string-array name="months">
+        <item>一月</item>
+        <item>二月</item>
+        <item>三月</item>
+        <item>四月</item>
+        <item>五月</item>
+        <item>六月</item>
+        <item>七月</item>
+        <item>八月</item>
+        <item>九月</item>
+        <item>十月</item>
+        <item>十一月</item>
+        <item>十二月</item>
     </string-array>
     <string name="drawer_open">打开导航菜单</string>
     <string name="drawer_close">关闭导航菜单</string>
@@ -17,5 +41,11 @@
 	<string name="txt_address">联系地址</string>
 	<string name="txt_master">联系人</string>
 	<string name="txt_tele">联系方式</string>
-	<string name="txt_product">商品列表</string>
+	<string name="txt_tag">产品大类</string>
+	<string name="txt_info">产品小类</string>
+	<string name="txt_chart">统计图表(千克)</string>
+	<string name="txt_null"></string>
+	<string name="txt_month">&#160;&#160;当月</string>
+	<string name="txt_season">&#160;&#160;当季</string>
+	<string name="txt_year">&#160;&#160;当年</string>
 </resources>

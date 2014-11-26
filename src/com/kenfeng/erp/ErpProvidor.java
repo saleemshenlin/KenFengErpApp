@@ -44,7 +44,7 @@ public class ErpProvidor extends ContentProvider {
 			if (id < 0) {
 				return db.delete(PoiDB.TABLE_ERP, selection, selectionArgs);
 			} else {
-				return db.delete(PoiDB.TABLE_ERP, PoiDB.C_FID + "=" + id, null);
+				return db.delete(PoiDB.TABLE_ERP, PoiDB.C_ID + "=" + id, null);
 			}
 		} finally {
 			db.close();

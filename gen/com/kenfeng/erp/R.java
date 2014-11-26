@@ -17,42 +17,67 @@ public final class R {
         public static final int anim_popup_exit=0x7f040005;
     }
     public static final class array {
+        public static final int chart_times=0x7f070002;
+        public static final int chart_titles=0x7f070001;
         public static final int items=0x7f070000;
-        public static final int types=0x7f070001;
+        public static final int months=0x7f070004;
+        public static final int types=0x7f070003;
     }
     public static final class attr {
     }
     public static final class color {
         public static final int actionbar_text=0x7f050000;
+        public static final int select_text=0x7f050002;
+        public static final int unselect_text=0x7f050001;
     }
     public static final class drawable {
         public static final int bg_welcome=0x7f020000;
-        public static final int border=0x7f020001;
-        public static final int ic_action_back=0x7f020002;
-        public static final int ic_action_cancel=0x7f020003;
-        public static final int ic_address=0x7f020004;
-        public static final int ic_dealer=0x7f020005;
-        public static final int ic_drawer=0x7f020006;
-        public static final int ic_launcher=0x7f020007;
-        public static final int ic_master=0x7f020008;
-        public static final int ic_more=0x7f020009;
-        public static final int ic_storage=0x7f02000a;
-        public static final int ic_supplier=0x7f02000b;
-        public static final int ic_tele=0x7f02000c;
+        public static final int border_bottom=0x7f020001;
+        public static final int border_top=0x7f020002;
+        public static final int ic_action_back=0x7f020003;
+        public static final int ic_action_cancel=0x7f020004;
+        public static final int ic_address=0x7f020005;
+        public static final int ic_chart=0x7f020006;
+        public static final int ic_dealer=0x7f020007;
+        public static final int ic_drawer=0x7f020008;
+        public static final int ic_info=0x7f020009;
+        public static final int ic_launcher=0x7f02000a;
+        public static final int ic_master=0x7f02000b;
+        public static final int ic_month=0x7f02000c;
+        public static final int ic_month_selected=0x7f02000d;
+        public static final int ic_month_seleted=0x7f02000e;
+        public static final int ic_more=0x7f02000f;
+        public static final int ic_season=0x7f020010;
+        public static final int ic_season_selected=0x7f020011;
+        public static final int ic_star=0x7f020012;
+        public static final int ic_storage=0x7f020013;
+        public static final int ic_supplier=0x7f020014;
+        public static final int ic_tag=0x7f020015;
+        public static final int ic_tele=0x7f020016;
+        public static final int ic_year=0x7f020017;
+        public static final int ic_year_selected=0x7f020018;
     }
     public static final class id {
-        public static final int content_frame=0x7f090004;
-        public static final int draw_item_img=0x7f090009;
-        public static final int draw_item_title=0x7f09000a;
-        public static final int drawer_layout=0x7f090003;
-        public static final int fragment_item_title=0x7f09000b;
-        public static final int imgCalloutMore=0x7f090008;
-        public static final int left_drawer=0x7f090006;
-        public static final int map=0x7f090005;
+        public static final int chart=0x7f090007;
+        public static final int content_frame=0x7f09000c;
+        public static final int draw_item_img=0x7f090011;
+        public static final int draw_item_title=0x7f090012;
+        public static final int drawer_layout=0x7f09000b;
+        public static final int fragment_item_title=0x7f090013;
+        public static final int imgCalloutMore=0x7f090010;
+        public static final int left_drawer=0x7f09000e;
+        public static final int map=0x7f09000d;
+        public static final int rate_bar=0x7f090005;
         public static final int text_view_address=0x7f090002;
+        public static final int text_view_chart=0x7f090006;
+        public static final int text_view_info=0x7f090004;
         public static final int text_view_master=0x7f090000;
+        public static final int text_view_month=0x7f090008;
+        public static final int text_view_season=0x7f090009;
+        public static final int text_view_tag=0x7f090003;
         public static final int text_view_tele=0x7f090001;
-        public static final int txtCallout=0x7f090007;
+        public static final int text_view_year=0x7f09000a;
+        public static final int txtCallout=0x7f09000f;
     }
     public static final class layout {
         public static final int activity_detail=0x7f030000;
@@ -69,9 +94,15 @@ public final class R {
         public static final int drawer_open=0x7f060001;
         public static final int dummy_section_text=0x7f060003;
         public static final int txt_address=0x7f060005;
+        public static final int txt_chart=0x7f06000a;
+        public static final int txt_info=0x7f060009;
         public static final int txt_master=0x7f060006;
-        public static final int txt_product=0x7f060008;
+        public static final int txt_month=0x7f06000c;
+        public static final int txt_null=0x7f06000b;
+        public static final int txt_season=0x7f06000d;
+        public static final int txt_tag=0x7f060008;
         public static final int txt_tele=0x7f060007;
+        public static final int txt_year=0x7f06000e;
     }
     public static final class style {
         /** 

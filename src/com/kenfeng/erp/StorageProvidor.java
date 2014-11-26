@@ -101,7 +101,7 @@ public class StorageProvidor extends ContentProvider {
 				return db.query(PoiDB.TABLE_STORAGE, projection, selection,
 						selectionArgs, null, null, sortOrder); //
 			} else {
-				Cursor cursor = db.query(PoiDB.TABLE_STORAGE, projection, PoiDB.C_FID
+				Cursor cursor = db.query(PoiDB.TABLE_STORAGE, projection, PoiDB.C_ID
 						+ " = " + id, null, null, null, null);
 				return cursor; //
 			}
