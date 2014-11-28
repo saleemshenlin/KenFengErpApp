@@ -42,6 +42,7 @@
 	<string name="txt_master">联系人</string>
 	<string name="txt_tele">联系方式</string>
 	<string name="txt_tag">产品大类</string>
+	<string name="txt_level">等级</string>
 	<string name="txt_info">产品小类</string>
 	<string name="txt_chart">统计图表(千克)</string>
 	<string name="txt_null"></string>

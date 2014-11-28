@@ -7,6 +7,7 @@ import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
@@ -31,8 +32,13 @@ import com.esri.android.map.MapView;
 import com.esri.android.map.ags.ArcGISTiledMapServiceLayer;
 import com.esri.android.map.event.OnLongPressListener;
 import com.esri.android.map.event.OnSingleTapListener;
+import com.esri.core.geometry.GeometryEngine;
+import com.esri.core.geometry.LinearUnit;
 import com.esri.core.geometry.Point;
+import com.esri.core.geometry.Polygon;
+import com.esri.core.geometry.Unit;
 import com.esri.core.map.Graphic;
+import com.esri.core.symbol.SimpleFillSymbol;
 
 
 public class DrawerActivity extends Activity {
@@ -48,7 +54,7 @@ public class DrawerActivity extends Activity {
     private Query mQuery;
     private long mErpLayerID = 0;
     private long mAroundLayerId = 0;
-    //private int mHistoryLayerID = 0;
+    private long mBufferLayerID = 0;
     private static MapView mMapView;
     
 	@Override
@@ -220,7 +226,7 @@ public class DrawerActivity extends Activity {
 	public void initMap() {
 		// Retrieve the map and initial extent from XML layout
         mMapView = (MapView) findViewById(R.id.map);
-        // Add dynamic layer to MapView
+        // Add tiled layer to MapView
 		mMapView.addLayer(new ArcGISTiledMapServiceLayer(getResources().getString(R.string.base_map)));
 		// Add single tab
 		mMapView.setOnSingleTapListener(new OnSingleTapListener() {
@@ -300,6 +306,10 @@ public class DrawerActivity extends Activity {
 						}
 					}
 				}
+				Callout mCallout = mMapView.getCallout();
+				if (mCallout!=null) {
+					mCallout.hide();
+				}
 				
 			}
 			
@@ -322,8 +332,10 @@ public class DrawerActivity extends Activity {
 						int[] graphicIDs = mGraphicsLayer.getGraphicIDs(x, y, 25);
 						if (graphicIDs != null && graphicIDs.length > 0) {
 							Graphic mGraphic = mGraphicsLayer.getGraphic(graphicIDs[0]);
+							addBuffer(mGraphic);
 							new AddAroundGraphicLayer().execute(mGraphic);
 						}
+						
 						return true;
 					}
 					else{
@@ -331,12 +343,31 @@ public class DrawerActivity extends Activity {
 					}
 				}
 				else{
+					Callout mCallout = mMapView.getCallout();
+					if (mCallout!=null) {
+						mCallout.hide();
+					}
 					return false;	
 				}
 			}
 		});
 	}
-    /**
+    
+	public void addBuffer(Graphic graphic) {
+		if(mBufferLayerID != 0){
+			if(mMapView.getLayerByID(mBufferLayerID)!=null){
+				mMapView.removeLayer(mMapView.getLayerByID(mBufferLayerID));
+			}
+		}
+		Polygon mbuffer = GeometryEngine.buffer(graphic.getGeometry(), mMapView.getSpatialReference(), 100.0, Unit.create(LinearUnit.Code.KILOMETER));
+		SimpleFillSymbol mFillSymbol = new SimpleFillSymbol(Color.argb(220, 255, 255, 0));
+		GraphicsLayer mGraphicsLayer = new GraphicsLayer();
+		Graphic mGraphic = new Graphic(mbuffer, mFillSymbol);
+		mGraphicsLayer.addGraphic(mGraphic);
+		mMapView.addLayer(mGraphicsLayer);
+		mBufferLayerID = mGraphicsLayer.getID();
+	}
+	/**
      * Fragment Item Adapter
      */
     public static class FragmentItemAdapter extends ArrayAdapter<CharSequence> {

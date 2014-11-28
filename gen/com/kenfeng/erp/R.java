@@ -67,14 +67,14 @@ public final class R {
         public static final int imgCalloutMore=0x7f090010;
         public static final int left_drawer=0x7f09000e;
         public static final int map=0x7f09000d;
-        public static final int rate_bar=0x7f090005;
+        public static final int rating_bar=0x7f090003;
         public static final int text_view_address=0x7f090002;
         public static final int text_view_chart=0x7f090006;
-        public static final int text_view_info=0x7f090004;
+        public static final int text_view_info=0x7f090005;
         public static final int text_view_master=0x7f090000;
         public static final int text_view_month=0x7f090008;
         public static final int text_view_season=0x7f090009;
-        public static final int text_view_tag=0x7f090003;
+        public static final int text_view_tag=0x7f090004;
         public static final int text_view_tele=0x7f090001;
         public static final int text_view_year=0x7f09000a;
         public static final int txtCallout=0x7f09000f;
@@ -94,15 +94,16 @@ public final class R {
         public static final int drawer_open=0x7f060001;
         public static final int dummy_section_text=0x7f060003;
         public static final int txt_address=0x7f060005;
-        public static final int txt_chart=0x7f06000a;
-        public static final int txt_info=0x7f060009;
+        public static final int txt_chart=0x7f06000b;
+        public static final int txt_info=0x7f06000a;
+        public static final int txt_level=0x7f060009;
         public static final int txt_master=0x7f060006;
-        public static final int txt_month=0x7f06000c;
-        public static final int txt_null=0x7f06000b;
-        public static final int txt_season=0x7f06000d;
+        public static final int txt_month=0x7f06000d;
+        public static final int txt_null=0x7f06000c;
+        public static final int txt_season=0x7f06000e;
         public static final int txt_tag=0x7f060008;
         public static final int txt_tele=0x7f060007;
-        public static final int txt_year=0x7f06000e;
+        public static final int txt_year=0x7f06000f;
     }
     public static final class style {
         /** 

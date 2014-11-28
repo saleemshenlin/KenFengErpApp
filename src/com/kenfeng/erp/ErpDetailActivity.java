@@ -9,11 +9,13 @@ import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.Telephony.Mms.Rate;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -185,6 +187,7 @@ public class ErpDetailActivity extends Activity {
 				TextView mTextMaster = (TextView)findViewById(R.id.text_view_master);
 				TextView mTextTag = (TextView)findViewById(R.id.text_view_tag);
 				TextView mTextInfo = (TextView)findViewById(R.id.text_view_info);
+				RatingBar mRatingBar = (RatingBar)findViewById(R.id.rating_bar);
 				mTextChart.setText(getResources().getStringArray(R.array.chart_times)[0]
 						+getResources().getStringArray(R.array.chart_titles)[Integer.parseInt(mPoiType)]);
 				mTextMaster.setText(result.getString(result.getColumnIndex(PoiDB.C_MASTER)));
@@ -192,6 +195,7 @@ public class ErpDetailActivity extends Activity {
 				mTextTel.setText(result.getString(result.getColumnIndex(PoiDB.C_TELE)));
 				mTextTag.setText(result.getString(result.getColumnIndex(PoiDB.C_CLASSIFY_L)));
 				mTextInfo.setText(result.getString(result.getColumnIndex(PoiDB.C_CLASSIFY_S)));
+				mRatingBar.setNumStars(Integer.parseInt(result.getString(result.getColumnIndex(PoiDB.C_LEVEL))+1));
 				mTags = result.getString(result.getColumnIndex(PoiDB.C_CLASSIFY_L)).split(";");
 				drawChart(0,300,mBarChart,mTags);
 				setTitle(result.getString(result.getColumnIndex(PoiDB.C_NAME)));
