@@ -124,7 +124,7 @@ public class DrawerActivity extends Activity {
 			}
 
 	    };
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 1; i++) {
 			Tab tab = mActionBar.newTab();
 			tab.setText(mType[i]).setTabListener(tabListener);
 			mActionBar.addTab(tab);
@@ -201,6 +201,7 @@ public class DrawerActivity extends Activity {
 	    setTitle(mItemTitles[position]);
 	    //Toast.makeText(getApplicationContext(), mItemTitles[position], Toast.LENGTH_SHORT).show();
 	    mDrawerLayout.closeDrawer(mDrawerList);
+	    removeBuffer();
 	}
 
 	@Override
@@ -310,7 +311,6 @@ public class DrawerActivity extends Activity {
 				if (mCallout!=null) {
 					mCallout.hide();
 				}
-				
 			}
 			
 			
@@ -367,6 +367,13 @@ public class DrawerActivity extends Activity {
 		mMapView.addLayer(mGraphicsLayer);
 		mBufferLayerID = mGraphicsLayer.getID();
 	}
+	
+	public void  removeBuffer() {
+		if(mBufferLayerID != 0){
+			GraphicsLayer mGraphicsLayer = (GraphicsLayer) mMapView.getLayerByID(mBufferLayerID);
+			mGraphicsLayer.removeAll();
+		}
+	}
 	/**
      * Fragment Item Adapter
      */
@@ -387,7 +394,19 @@ public class DrawerActivity extends Activity {
 			vi.inflate(resourceId, mLinearLayout, true);
 			TextView mItemTitle = (TextView) mLinearLayout
 					.findViewById(R.id.draw_item_title);
-			
+			ImageView mImage = (ImageView) mLinearLayout.findViewById(R.id.draw_item_img);
+			switch(position){
+				case 0:
+					mImage.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_supplier));
+					break;
+				case 1:
+					mImage.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_dealer));
+					break;
+				case 2:
+					mImage.setImageDrawable(getContext().getResources().getDrawable(R.drawable.ic_storage));
+					break;
+					
+			}
 			
 			mItemTitle.setText(mItem);
 			return mLinearLayout;

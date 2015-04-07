@@ -180,7 +180,7 @@ public class ErpDetailActivity extends Activity {
 			// TODO Auto-generated method stub
 			super.onPostExecute(result);
 			if (result != null) {
-//				Toast.makeText(ErpDetailActivity.this, "成功获取数据",Toast.LENGTH_LONG).show();
+//				Toast.makeText(ErpDetailActivity.this, "鎴愬姛鑾峰彇鏁版嵁",Toast.LENGTH_LONG).show();
 				result.moveToFirst();
 				TextView mTextAddress = (TextView)findViewById(R.id.text_view_address);
 				TextView mTextTel = (TextView)findViewById(R.id.text_view_tele);
@@ -195,12 +195,12 @@ public class ErpDetailActivity extends Activity {
 				mTextTel.setText(result.getString(result.getColumnIndex(PoiDB.C_TELE)));
 				mTextTag.setText(result.getString(result.getColumnIndex(PoiDB.C_CLASSIFY_L)));
 				mTextInfo.setText(result.getString(result.getColumnIndex(PoiDB.C_CLASSIFY_S)));
-				mRatingBar.setNumStars(Integer.parseInt(result.getString(result.getColumnIndex(PoiDB.C_LEVEL))+1));
+				mRatingBar.setNumStars(Integer.parseInt(result.getString(result.getColumnIndex(PoiDB.C_LEVEL)))+1);
 				mTags = result.getString(result.getColumnIndex(PoiDB.C_CLASSIFY_L)).split(";");
 				drawChart(0,300,mBarChart,mTags);
 				setTitle(result.getString(result.getColumnIndex(PoiDB.C_NAME)));
 			} else {
-				Toast.makeText(ErpDetailActivity.this, "获取数据失败",
+				Toast.makeText(ErpDetailActivity.this, "鑾峰彇鏁版嵁澶辫触",
 						Toast.LENGTH_LONG).show();
 			}
 		}
@@ -227,7 +227,6 @@ public class ErpDetailActivity extends Activity {
             	dataSets.add(set1);
         	}
 			chart.setScaleMinima(2.6f, 2f);
-			chart.centerViewPort(1, 3600);
 		} else {
 			xVals.add(getResources().getString(R.string.txt_tag));
 			for (int j = 0; j < tags.length; j++) {
